@@ -1,3 +1,35 @@
 /* header */
-.page-header {
+.app-header {
+  background-color: rgba(7, 134, 7, 0.32);
+  color: #444;
+  display: flex;
+  justify-content: center;
+}
+
+.head-container {
+  @include make-container;
+}
+
+.head-row {
+  @include make-row;
+  height: 87px;
+}
+
+.btn-col {
+  flex: 0 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-col {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & h1 {
+    margin: 0;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
 }
