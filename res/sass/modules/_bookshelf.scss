@@ -2,6 +2,8 @@
   @include make-container();
   max-width: 1230px;
   margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .book-row {
@@ -11,18 +13,58 @@
 .book-col {
   @include make-col-ready();
   @include make-col(1, 3);
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  @include media-width-down(sm) {
+    @include make-col(1, 2);
+  }
+  @include media-width-down(xs) {
+    @include make-col(1, 1);
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+  }
 }
 
 .book-box {
   border: 1px solid #ddd;
-  @include crossBorder(10px);
+  @include crossBorder(10px 10px 0 0);
   padding: 5%;
-  height: 100%;
+  background-color: #fff;
+  & h1 {
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.detail-col {
+  @include make-col-ready;
+  @include make-col(1, 2);
+}
+
+.book-description {
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
 }
 
 .cover-container {
   height: 200px;
   width: 300px;
   overflow: hidden;
+}
+
+.price-container {
+  padding-top: 1.5em;
+}
+
+.book-price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-size: 2.1em;
+  & .small {
+    margin-top: 0.5em;
+    font-size: 0.5em;
+  }
 }

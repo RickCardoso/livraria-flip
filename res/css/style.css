@@ -6261,6 +6261,9 @@ body {
   max-width: 1330px;
   margin: auto; }
 
+.app-content {
+  background-color: #e8e8e3; }
+
 /* boxes */
 /* buttons */
 .btn-std {
@@ -6270,7 +6273,10 @@ body {
   transition: all 0.3s;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  border: none; }
+  .btn-std:focus {
+    outline: none; }
 
 .btn-checkout {
   background: transparent;
@@ -6286,7 +6292,61 @@ body {
     background-color: rgba(0, 0, 0, 0.15);
     color: #000; }
 
+.btn-cart {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  color: #fff;
+  width: 100%;
+  -webkit-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+  text-transform: uppercase; }
+
+.btn-add {
+  background-color: #126494; }
+  .btn-add:hover, .btn-add:focus {
+    background-color: #1883c1; }
+  .btn-add.added {
+    background-color: #129412; }
+
+.btn-learn-more {
+  display: block;
+  margin-left: auto;
+  background-color: transparent;
+  font-size: 0.75em;
+  color: #126494;
+  text-transform: uppercase; }
+  .btn-learn-more:hover, .btn-learn-more:focus {
+    color: #fff;
+    background-color: #126494; }
+
 /* forms */
+input.search-bar {
+  -webkit-appearance: none;
+  border: none;
+  width: 100%;
+  height: 2.4em;
+  font-size: 1em;
+  padding-left: 0.75em;
+  padding-right: 0.75em; }
+
+button.btn-search {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  background-color: transparent;
+  width: 3em;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0; }
+  button.btn-search:hover, button.btn-search:focus {
+    background-color: #222;
+    color: #fff; }
+
 /* links */
 a {
   -webkit-transition: all 0.3s;
@@ -6303,37 +6363,55 @@ a {
   background-color: rgba(7, 134, 7, 0.32);
   color: #444;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-flow: row wrap; }
 
 .head-container {
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  width: 100%; }
+  width: 100%;
+  flex: 0 0 100%; }
 
 .head-row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  height: 87px; }
+  height: 5.5em; }
+  @media (max-width: 767px) {
+    .head-row {
+      height: 4.5em;
+      font-size: 0.9em; } }
+  @media (max-width: 575px) {
+    .head-row {
+      height: 3.5em;
+      font-size: 0.75em; } }
 
 .btn-col {
-  flex: 0 0 100px;
+  flex: 0 0 6.25em;
   display: flex;
   justify-content: center;
   align-items: center; }
 
 .title-col {
+  padding: 15px;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 767px) {
+    .title-col {
+      justify-content: flex-start; } }
   .title-col h1 {
     margin: 0;
     font-size: 2em;
     text-transform: uppercase; }
+
+.filter-container {
+  position: relative;
+  flex: 0 0 100%; }
 
 /* footer */
 .book-container {
@@ -6343,7 +6421,9 @@ a {
   padding-left: 15px;
   width: 100%;
   max-width: 1230px;
-  margin: auto; }
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px; }
 
 .book-row {
   display: flex;
@@ -6359,19 +6439,60 @@ a {
   padding-left: 15px;
   flex: 0 0 33.33333%;
   max-width: 33.33333%;
-  padding: 15px; }
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  @media (max-width: 767px) {
+    .book-col {
+      flex: 0 0 50%;
+      max-width: 50%; } }
+  @media (max-width: 575px) {
+    .book-col {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-top: 7.5px;
+      padding-bottom: 7.5px; } }
 
 .book-box {
   border: 1px solid #ddd;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
   padding: 5%;
-  height: 100%; }
+  background-color: #fff; }
+  .book-box h1 {
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-align: center; }
+
+.detail-col {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 50%;
+  max-width: 50%; }
+
+.book-description {
+  font-size: 0.8em;
+  margin-bottom: 0.5em; }
 
 .cover-container {
   height: 200px;
   width: 300px;
   overflow: hidden; }
+
+.price-container {
+  padding-top: 1.5em; }
+
+.book-price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-size: 2.1em; }
+  .book-price .small {
+    margin-top: 0.5em;
+    font-size: 0.5em; }
 
 /*# sourceMappingURL=style.css.map */

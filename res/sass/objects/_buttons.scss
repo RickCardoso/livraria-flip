@@ -2,6 +2,10 @@
 .btn-std {
   @include crossTransition(all .3s);
   @include crossBorder(3px);
+  border: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-checkout {
@@ -16,5 +20,39 @@
   &:focus {
     background-color: rgba(0, 0, 0, 0.15);
     color: #000;
+  }
+}
+
+.btn-cart {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  color: #fff;
+  width: 100%;
+  @include crossBorder(0 0 10px 10px);
+  text-transform: uppercase;
+}
+
+.btn-add {
+  background-color: #126494;
+  &:hover,
+  &:focus {
+    background-color: lighten(#126494, 10%);
+  }
+  &.added {
+    background-color: #129412;
+  }
+}
+
+.btn-learn-more {
+  display: block;
+  margin-left: auto;
+  background-color: transparent;
+  font-size: 0.75em;
+  color: #126494;
+  text-transform: uppercase;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #126494;
   }
 }
