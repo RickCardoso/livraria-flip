@@ -71,3 +71,11 @@
     font-size: 0.5em;
   }
 }
+
+.btn-wrap {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
