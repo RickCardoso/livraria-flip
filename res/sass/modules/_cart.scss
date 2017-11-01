@@ -1,0 +1,53 @@
+.checkout-container {
+  height: 100vh;
+  width: 100%;
+  & h1 {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  & table {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #333;
+    @include crossBorder(10px);
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    & td,
+    & th {
+      text-align: center;
+      padding: 5px;
+      &:not(:first-of-type) {
+        border-left: 1px solid #333;
+      }
+      &:nth-of-type(1) {
+        width: 40%;
+      }
+      &:nth-of-type(2) {
+        width: 20%;
+      }
+      &:nth-of-type(3) {
+        width: 30%;
+      }
+      &:nth-of-type(4) {
+        width: 10%;
+      }
+    }
+    & tr.total {
+      & td:nth-of-type(2) {
+        border-left: none;
+      }
+    }
+    & thead {
+      & th {
+
+      }
+    }
+    & tbody {
+      & td {
+        border-top: 1px solid #333;
+      }
+    }
+  }
+}

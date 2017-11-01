@@ -24,15 +24,13 @@
 }
 
 .btn-cart {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  flex: 1 0 33%;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   color: #fff;
-  width: 100%;
   @include crossBorder(0);
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .btn-add {
@@ -41,8 +39,25 @@
   &:focus {
     background-color: lighten(#126494, 10%);
   }
-  &.added {
-    background-color: #129412;
+}
+
+.btn-plus {
+  max-width: 0;
+  padding: 0;
+  background-color: #129412;
+  &:hover,
+  &:focus {
+    background-color: lighten(#129412, 10%);
+  }
+}
+
+.btn-minus {
+  max-width: 0;
+  padding: 0;
+  background-color: #da1717;
+  &:hover,
+  &:focus {
+    background-color: lighten(#da1717, 10%);
   }
 }
 
@@ -57,5 +72,14 @@
   &:focus {
     color: #fff;
     background-color: #126494;
+  }
+}
+
+.btn-remove {
+  @include crossTransition(all .3s);
+  cursor: pointer;
+  &:hover {
+    background-color: #da1717;
+    color: #fff;
   }
 }
