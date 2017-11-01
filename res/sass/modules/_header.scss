@@ -1,3 +1,54 @@
 /* header */
-.page-header {
+.app-header {
+  background-color: rgba(7, 134, 7, 0.32);
+  color: #444;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.head-container {
+  @include make-container;
+  flex: 0 0 100%;
+}
+
+.head-row {
+  @include make-row;
+  height: 5.5em;
+  @include media-width-down(sm) {
+    height: 4.5em;
+    font-size: 0.9em;
+  }
+  @include media-width-down(xs) {
+    height: 3.5em;
+    font-size: 0.75em;
+  }
+}
+
+.btn-col {
+  flex: 0 0 6.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-col {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include media-width-down(sm) {
+    justify-content: flex-start;
+  }
+  & h1 {
+    margin: 0;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+}
+
+.filter-container {
+  position: relative;
+  flex: 0 0 100%;
 }
