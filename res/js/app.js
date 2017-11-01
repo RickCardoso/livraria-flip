@@ -15,9 +15,7 @@ $(document).ready(function() {
             .append($('<h1></h1>').attr('class', 'book-title').text(json.items[i].volumeInfo.title))
             .append($('<div></div>').attr('class', 'row')
               .append($('<div></div>').attr('class', 'detail-col')
-                // .append($('<div></div>').attr('class', 'cover-container')
-                  .append($('<img></img>').attr('class', 'img-fluid').attr('src', json.items[i].volumeInfo.imageLinks.thumbnail).attr('alt', 'cover'))
-                // )
+                .append($('<img></img>').attr('class', 'img-fluid').attr('src', json.items[i].volumeInfo.imageLinks.thumbnail).attr('alt', 'cover'))
               )
               .append($('<div></div>').attr('class', 'detail-col')
                 .append($('<p></p>').attr('class', 'book-description').text((json.items[i].volumeInfo.description.length > 100) ? json.items[i].volumeInfo.description.substring(0, 100) + String.fromCharCode(8230) : json.items[i].volumeInfo.description.length))
@@ -32,8 +30,8 @@ $(document).ready(function() {
                 )
               )
             )
+            .append($('<button></button>').attr('class', 'btn-std btn-cart btn-add').text('Adicionar ao carrinho'))
           )
-          .append($('<button></button>').attr('class', 'btn-std btn-cart btn-add').text('Adicionar ao carrinho'))
         );
       }
     });

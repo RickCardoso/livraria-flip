@@ -26,10 +26,13 @@
 }
 
 .book-box {
+  position: relative;
   border: 1px solid #ddd;
-  @include crossBorder(10px 10px 0 0);
-  padding: 5%;
+  @include crossBorder(10px);
+  padding: 5% 5% 15%;
   background-color: #fff;
+  height: 100%;
+  overflow: hidden;
   & h1 {
     margin-bottom: 1em;
     font-size: 1.3em;
